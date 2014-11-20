@@ -83,8 +83,8 @@ def sort_last(tuples):
   while j < len(tuples):
     i = j + 1
     while i < len(tuples):
-      print (tuples)      
-      if tuples[i][-1] > tuples[j][-1]:
+      #print (tuples)      
+      if tuples[i][-1] < tuples[j][-1]:
         t = tuples[i]
         tuples[i] = tuples[j]
         tuples[j] = t  

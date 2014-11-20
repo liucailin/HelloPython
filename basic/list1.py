@@ -42,22 +42,11 @@ def front_x(words):
   while j < len(words):
     i = j + 1
     while i < len(words):
-      #print (words)
-      if words[i][0] == 'x':
-        if words[j][0] == 'x':
-          if words[i][:-1] < words[j][:-1]:
-            t = words[i]
-            words[i] = words[j]
-            words[j] = t            
-        else:
-          t = words[i]
-          words[i] = words[j]
-          words[j] = t          
-      elif words[j][0] != 'x' and words[i] < words[j]:
+      #print (words)      
+      if compare (words[i], words[j]) == True:
         t = words[i]
         words[i] = words[j]
-        words[j] = t        
-        #exchange(words[i], words[i - 1])      
+        words[j] = t  
       i += 1    
     j += 1
   return words
@@ -67,6 +56,19 @@ def exchange(a, b):
   a = b
   b = t
 
+def compare(a, b): # if a < b
+	if a[0] == 'x':
+		if b[0] == 'x':
+			if a[:-1] < b[:-1]:
+				return True
+		else:
+			return True
+	elif b[0] != 'x' and a < b:
+		return True
+	
+
+ 
+  
 
 
 # C. sort_last
@@ -77,6 +79,18 @@ def exchange(a, b):
 # Hint: use a custom key= function to extract the last element form each tuple.
 def sort_last(tuples):
   # +++your code here+++
+  j = 0
+  while j < len(tuples):
+    i = j + 1
+    while i < len(tuples):
+      print (tuples)      
+      if tuples[i][-1] > tuples[j][-1]:
+        t = tuples[i]
+        tuples[i] = tuples[j]
+        tuples[j] = t  
+      i += 1    
+    j += 1
+  return tuples
   return
 
 
